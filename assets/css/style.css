@@ -1,0 +1,58 @@
+.center-text {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.measure {
+  max-width: 80ch;
+}
+
+.layout-container {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  text-align: left;
+  
+}
+
+header {
+  height: 100vh;
+  align-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  text-align: center;
+}
+h2 {
+  font-size: 4rem;
+  text-align: center;
+  padding-top: 8rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 2rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    line-height: 1;
+    padding-bottom: 2rem;
+}
+
+.indent {
+    text-indent: 2rem;
+}
+
+.streamer {
+    font-weight: bold;
+}
