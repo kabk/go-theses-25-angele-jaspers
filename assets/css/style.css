@@ -1,58 +1,1338 @@
-.center-text {
-  margin: 0 auto;
-  text-align: center;
+@charset "UTF-8";
+
+
+
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
+@font-face {
+    font-family: 'Your Font Name';
+    src: url('../fonts/yourfontname/yourfontname-roman.woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
 }
 
-.measure {
-  max-width: 80ch;
+@font-face {
+    font-family: 'Your Font Name';
+    src: url('../fonts/yourfontname/yourfontname-italic.woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: block;
 }
 
-.layout-container {
-  display: flex;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-  text-align: left;
+
+
+/* VARIABLES */
+
+:root {
+  /* Color values */
+  --color-background: rgba(255,255,255,1);
+  --color-text: rgba(0,0,0,1);
+  /* --color-text-link: rgba(0,0,255,0.8);
+  --color-text-link-hover: rgba(0,0,255,0.4);*/
+  /* Font values */
+  --font-text: 'Your Font Name', 'Helvetica', 'Arial', sans-serif;
+  --font-size: 24px;
+  /* Margin value */
+  --margin: 1rem;
+}
+
+
+
+/* GENERAL STYLES */
+
+html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+body {
+  position:relative;
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  width: 100%;
+  margin:0;
+  padding: 0;
+  height:auto;
+  overflow-y:auto;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  hyphens: auto;
+  transition: all 0.3s ease;
   
 }
 
-header {
-  height: 100vh;
-  align-content: center;
+.page-container{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+
+h1 {
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  transform: translateY(-2rem);
+  text-align: center;
+
+}
+
+h2 {
+  
+  font-style: normal;
+  font-weight: 100;
+  margin-top: 2.4rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 100;
+  font-size: 1.2rem;
+  margin-top: 2.4rem;
+  margin-bottom: 1.2rem;
+  line-height: 1;
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  
+}
+
+hr {
+  display: block;
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 100vw;
+  border: 0;
+  border-top: 2px solid #000000;
+  margin: 1em 0;
+  padding: 0;
+  
+}
+
+li {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+p,
+dl,
+ol,
+ul {
+    font-weight: 200;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+p {
+    
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    
+    /*vertical-align: baseline;*/
+    /*text-indent: 2.6rem;*/
+    hyphens:auto;
+}
+
+.imagecolumn {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  font-weight: 300;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px;
+}
+
+.image {
+  align-self: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.image > img {
+  width: 40%;
+  height: auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.image.enlarged > img {
+  width: calc(100% - 20px);
+  height: auto;
+  margin-bottom: 0px;
+}
+
+.fignumber > p{
+  margin-bottom: calc(0.2rem + 10px);
+}
+
+.figcaption {
+  display: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  vertical-align: baseline;
+  position: relative;
   text-align: center;
 }
 
-h1 {
-  font-size: 6rem;
+.figcaption > p {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-top: 0.2rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: left;
+  hyphens: none;
+  
+
+}
+
+.image.enlarged .figcaption {
+  display: block;
+  margin-top: 0px;
+}
+
+#fig-14{
+  position: relative;
+  top: -10rem;
+}
+
+mark.fig-link {
+  background-color: blue;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+mark.fig-link:hover {
+  text-decoration: underline;
+}
+
+.fignumber:hover {
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+
+/*
+.image {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}*/
+
+
+
+/*
+.image-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#image-container {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  background-color: #fff;
+
+  text-align: center;
+  border: 1px black solid;
+}
+
+#image-container img {
+  margin: 10px;
+  max-height: 50vh;
+  max-width: 30vw;
+  object-fit: contain;
+}*/
+
+
+
+
+sup {
+  position: relative;
+  z-index: 0;
+}
+
+.footnote{
+  font-size: 100%;;
+  position: relative;
+  top:0;
+  left:0;
+  background-color: green;
+  color: white;
+  z-index: 0;
+}
+
+.footnote-panel {
+  position: fixed;
+  bottom: 90px;
+  left: 76vw;
+  width: 24vw;
+  height: calc(100vh - 90px);
+  padding: 20px;
+  border-left: 0;
+  display: none;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.footnote-panel #footnote-content {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  padding-right: 20px;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+
+.footnote-text {
+  display: none;
+}
+
+.footnotereverse {
+  background-color: green;
+  color: white;
+}
+
+
+/*
+
+form {
+  text-align: center;
+  float: right;
+  clear: right;
+  width: 21vw;
+  margin-right: -50%;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: baseline;
+  position: relative;
+  top: -2.6rem;
+  right: 0;
+  padding-left: 2vw;
+  padding-right: 2vW;
+  padding-top: 0;
+  padding-bottom: 1vW;
+  
+}*/
+
+
+
+fieldset {
+  padding:0;
+  align-items: center;
+  line-height: 1;
+  border: 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  text-align: center;
+ }
+
+/*
+ input[type="checkbox"]:checked + label + .content {
+  display: block;
+  max-height: 500px;
+}*/
+
+fieldset > input.submit-button {
+  justify-self: end;
+ }
+
+ #true:checked + span {
+  text-decoration: underline;
+ }
+
+ #false:checked + span {
+  text-decoration: underline;
+ }
+
+
+
+
+mark{
+  background-color: blue;
+  color:white;
+ 
+}
+
+
+
+
+
+.dropdownmenu{
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: scroll;
+  background-color: white;
+  border-right: 2px black solid;
+  text-align: left;
+  z-index: 1;
+}
+
+#dropdownmenu-content{
+  position: relative;
+  width: 24vw;
+  height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 70px;
+  box-sizing: border-box;
+}
+
+.dropdown-content{
+  display:none;
+  position:fixed;
+  background-color: white;
+  z-index: 1;
+}
+
+.dropdown-content.is-visible{
+  display:block;
+  z-index: 10;
+}
+
+.imagegallery {
+  position: fixed;
+  left:0;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  overflow-y: scroll;
+  border-right: 1px solid black;
+}
+
+#imagegallery-content {
+  width: 24vw;
+  height: 100vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  text-align: center;
+  border-right: 2px solid black;
+  
+}
+
+#imagegallery-content > a > img {
+ height: 14%;
+ width: auto;
+ padding: 10%;
+ align-self: center;
+}
+
+.yellow-menu{
+  position: fixed;
+  left: 76vw;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+#dropdown-bibliography{
+  height: 100vh;
+  width: 24vw;
+  text-align: left;
+  overflow-y: scroll;
+  border-left: 2px  black solid;
+}
+
+#dropdown-bibliography > p{
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  hyphens: auto;
+  text-indent: -1rem;
+  
+}
+
+#dropdown-bibliography > ol {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+#dropdown-bibliography > ol > li > p {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  hyphens: auto;
+}
+
+span.longlink {
+  overflow-wrap: break-word; 
+  hyphens: none; 
+  line-break: anywhere;
+}
+
+
+
+.acknowledgements{
+  position: fixed;
+  left: 76vw;
+  top:0;
+  overflow-y: scroll;
+  background-color: white;
+  z-index: 1;
+}
+
+
+#acknowledgements-content{
+  height: 100vh;
+  text-align: left;
+  box-sizing: border-box;
+  border-left: 2px black solid;
+  width: 24vw;
+  z-index: 1;
+}
+
+
+#acknowledgements-content > p{
+  position: absolute;
+  bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  width: 24vw;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+button.circle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  z-index: 105;
+  cursor: pointer;
+  border: 0;
+}
+
+
+#bluecircle {
+  background-color: blue;
+}
+
+#redcircle {
+  background-color: red;
+  top: calc(100vh - 50px);
+  
+}
+
+#yellowcircle {
+  background-color: yellow;
+  left: calc(100vw - 50px);
+}
+
+#greencircle {
+  background-color: green;
+  left: calc(100vw - 50px);
+  top: calc(100vh - 50px);
+}
+
+.square {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 30px;
+
+  width: 30px;
+}
+
+#greensquare {
+  
+  top: calc(50vh - 15px);
+}
+
+#seguin {
+  width:75%;
+}
+
+
+#mark13 {
+  display: auto;
+}
+
+#fig13 {
+  margin: inherit;
+}
+
+
+
+p.subtitle {
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  display: block;
+  line-height: 1;
+}
+
+.numeral {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.danger {
+  color: red;
+}
+
+
+
+section {
+  text-align: justify;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding-top: 0;
+  padding-bottom:0;
+}
+
+
+section .content {
+  display: none;
+  text-align: justify;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding-top: 0;
+  padding-bottom: 1.2rem;
+
+}
+
+
+/*
+section .content.expanded {
+  display: grid;
+  text-align: justify;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding-top: 0;
+  padding-bottom: 1.2rem;
+  max-height: 500px;
+  
+} */
+
+label {
+  cursor: pointer;
+}
+
+#do-lambs-roar, #yes-no{
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  display: block;
+}
+
+.textelement {
+  align-items: start;
+  text-align: justify;
+ 
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  margin: 0;
+}
+
+.level2 {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+
+
+#prelude {
+  margin-top: 7.2rem;
+  margin-bottom: 7.2rem;
+}
+
+/* PAGE STYLES */
+
+/* page structure */
+
+
+
+/* navigation */
+ 
+
+
+/* content */
+
+header {
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  height: 100vh;
+  text-align: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+#footnote-1{
+  background-color: white;
+  color: black;
+  font-size: 80%;
+  position: relative;
+  top: -0.3rem;
+}
+
+p.header {
   text-align: center;
 }
-h2 {
-  font-size: 4rem;
-  text-align: center;
-  padding-top: 8rem;
+
+
+.headerform{
+font-size: 3rem;
+
 }
-h3 {
-  font-size: 2rem;
+
+
+.menu{
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  list-style: none;
+  padding-left: 0;
 }
-h4 {
-  font-size: 2rem;
+
+a { 
+  text-decoration: none;
+  color: inherit;
 }
-h5 {
-  font-size: 2rem;
+
+a:hover {
+  text-decoration: underline;
 }
-h6 {
+
+
+.greybox{
+  grid-column-start: 1;
+  grid-column-end: span 4; 
+  position: relative;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25% ;
+  background-color: rgb(238, 238, 238);
+  min-height: 100vh;
+}
+
+#abstract {
+  align-self: start;
+  margin-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+
+#bibliography{
+  display: none;
+}
+/*
+
+#bibliography {
+  text-align: left;
+  overflow-wrap: break-word; 
+  hyphens: none; 
+  line-break: anywhere;
+} 
+
+#bibliography > p {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+#image-sources {
+  text-align: left;
+  overflow-wrap: break-word; 
+  hyphens: none; 
+  line-break: anywhere;
+}
+
+#image-sources > p {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  text-align: left;
+}*/
+
+/* Chapter Epigraphs */
+div.epigraph {
+  margin: 5em 0;
+}
+
+div.epigraph > blockquote {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+div.epigraph > blockquote,
+div.epigraph > blockquote > p {
+  font-style: italic;
+}
+
+div.epigraph > blockquote > footer {
+  font-style: normal;
+}
+
+div.epigraph > blockquote > footer > cite {
+  font-style: italic;
+}
+/* end chapter epigraphs styles */
+
+blockquote {
+  font-size: 1.1rem;
+}
+
+blockquote p {
+  width: 55%;
+  margin-right: 40px;
+}
+
+blockquote footer {
+  width: 55%;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+/* section > p,
+section > footer,
+section > table {
+  width: 55%;
+} */
+
+/* 50 + 5 == 55, to be the same width as paragraph */
+/* section > dl,
+section > ol,
+section > ul {
+  width: 50%;
+  -webkit-padding-start: 5%;
+} */
+
+dt:not(:first-child),
+li:not(:first-child) {
+  margin-top: 0.25rem;
+}
+
+
+
+.figure {
+  display: none;
+}
+
+
+
+
+
+/* Sidenotes, margin notes, figures, captions */
+
+
+/*
+
+blockquote .sidenote,
+blockquote .marginnote {
+  margin-right: -82%;
+  min-width: 59%;
+  text-align: left;
+}
+*/
+div.fullwidth,
+table.fullwidth {
+  width: 100%;
+}
+
+div.table-wrapper {
+  overflow-x: auto;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.sans {
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: .03em;
+}
+
+code, pre > code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.0rem;
+  line-height: 1.42;
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+}
+
+.sans > code {
+  font-size: 1.2rem;
+}
+
+h1 > code,
+h2 > code,
+h3 > code {
+  font-size: 0.80em;
+}
+
+.marginnote > code,
+.sidenote > code {
   font-size: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6{
-    line-height: 1;
-    padding-bottom: 2rem;
+pre > code {
+  font-size: 0.9rem;
+  width: 52.5%;
+  margin-left: 2.5%;
+  overflow-x: auto;
+  display: block;
 }
 
-.indent {
-    text-indent: 2rem;
+pre.fullwidth > code {
+  width: 90%;
 }
 
-.streamer {
-    font-weight: bold;
+.fullwidth {
+  max-width: 90%;
+  clear:both;
 }
+
+span.newthought {
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+
+/*input.margin-toggle {
+  display: none;
+} 
+
+input.image-toggle {
+  display: none;
+}
+
+label.sidenote-number {
+  display: inline-block;
+  max-height: 1.6rem; /* should be less than or equal to paragraph line-height 
+}
+
+label.margin-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+label.image-toggle{
+  display: none;
+}
+
+.iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  /*padding-top: 25px;
+  height: 0;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+label.margin-toggle:not(.sidenote-number) {
+  display: inline;
+}
+
+label.image-toggle:not(.sidenote-number) {
+display: inline;
+}
+
+.sidenote {
+  display: none;
+}*/
+
+/*
+.margin-toggle:checked + .sidenote
+{
+  display: block;
+  float: left;
+  left: 1rem;
+  clear: both;
+  width: 95%;
+  margin: 1rem 2.5%;
+  vertical-align: baseline;
+  position: relative;
+}
+*/
+
+
+
+
+
+
+
+/* UTILITY CLASSES */
+
+/* hide desktop mobile etc */
+
+/*.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+} */
+
+
+
+
+
+/* WEBSITE MEDIA QUERIES */
+
+/* responsive typeface for various breaking points, sets the default 'rem' value */
+@media (max-width: 299px) { :root{--font-size: 12px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 299px) and (max-width: 340px) { :root{--font-size: 12px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 340px) and (max-width: 440px) { :root{--font-size: 13px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 441px) and (max-width: 779px) { :root{--font-size: 14px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 780px) and (max-width: 992px) { :root{--font-size: 13px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 993px) and (max-width: 1200px) { :root{--font-size: 14px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 1201px) and (max-width: 1320px) { :root{--font-size: 15px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 1321px) { :root{--font-size: 16px;} html, body {font: var(--font-size) var(--font-text); } }
+
+/* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
+/* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
+
+@media (max-width: 779px) {
+
+  /* your 'mobile' overriding css properties here */
+
+
+  .page-container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+
+  .textelement {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  h1, h2, h3 {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    line-break: auto;
+    hyphens: auto;
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+
+  fieldset{
+    grid-column-start: 1;
+    grid-column-end: span 1;
+  }
+
+
+
+  
+
+
+
+
+
+
+  section {
+    
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    display: grid;
+    grid-template-columns: 100%;
+    padding-top: 0;
+    padding-bottom:0;
+  }
+  
+  
+  section .content {
+    display: grid;
+    text-align: justify;
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-template-columns:100%;
+    padding-top: 0;
+    padding-bottom: 1.2rem;
+  
+  }
+  
+
+
+
+
+  .imagecolumn {
+  display: none;
+  }
+
+  .figure {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    padding: 5% 20%;
+    box-sizing: border-box;
+
+  }
+  
+  .figure > img {
+    align-self: center;
+    width: 100%;
+  }
+
+  .figcaption {
+    display: block;
+    margin: 0;
+    position: relative;
+    text-align: center;
+  }
+
+  .figcaption > p {
+    margin: 0;
+    margin-top: 0.2rem;
+  }
+
+  header {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  }
+
+
+
+  .greybox{
+  grid-column-start: 1;
+  grid-column-end: span 1; 
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  background-color: rgb(238, 238, 238);
+  min-height: 100vh;
+  }
+
+
+
+
+
+#dropdownmenu-content{
+  position: relative;
+  width: 100vw;
+
+}
+
+#imagegallery-content{
+  position: relative;
+  width: 100vw;
+
+}
+
+
+.yellow-menu{
+  position: fixed;
+  left: 0;
+}
+
+#dropdown-bibliography{
+  width: 100vw;
+}
+
+.acknowledgements{
+  position: fixed;
+  left: 0vw;
+
+}
+
+#acknowledgements-content{
+  width: 100vw;
+  height: 100vh;
+}
+
+
+#acknowledgements-content > p{
+  width: 100vw;
+}
+
+
+
+
+
+.footnote-panel {
+  position: fixed;
+  bottom: 10px;
+  left:  70px;
+  height: fit-content;
+  width: calc(100vw - 140px);
+  padding: 8px 12px;
+  border: 2px solid black;
+  display: none;
+  z-index: 1;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.footnote-panel #footnote-content {
+  position: relative;
+  bottom: 5px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  font-weight: 200;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+
+
+
+
+  hr,
+  section > p,
+  section > footer,
+  section > table {
+      width: 100%;
+  }
+
+  pre > code {
+      width: 97%;
+  }
+
+  section > dl,
+  section > ol,
+  section > ul {
+      width: 90%;
+  }
+
+  
+
+ 
+
+  blockquote {
+      margin-left: 1.5em;
+      margin-right: 0em;
+  }
+
+  blockquote p,
+  blockquote footer {
+      width: 100%;
+  }
+
+  label.margin-toggle:not(.sidenote-number) {
+      display: inline;
+  }
+
+  label.image-toggle:not(.sidenote-number) {
+    display: inline;
+  }
+
+  label {
+      cursor: pointer;
+  }
+
+  div.table-wrapper,
+  table {
+      width: 85%;
+  }
+
+  
+  /* utility classes, mobile */
+
+  .desktop-only{
+    display:none;
+  }
+
+  .mobile-only{
+    display:block;
+  }
+
+}
+
+
+
+/* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+
+@media (max-width: 339px) {
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+
+@media (max-width: 779px) and (orientation: landscape) {
+
+   /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style for 'small' desktop screens */
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* your overriding css properties here */
+
+}
+
+
