@@ -1084,8 +1084,15 @@ button.circle {
     grid-column-end: span 1;
     line-break: auto;
     hyphens: auto;
-    padding-left: 90px;
-    padding-right: 90px;
+ 
+  }
+
+  h1 {
+   
+    padding-top: 20vh; 
+      
+    
+    
   }
 
   fieldset{
@@ -1150,8 +1157,8 @@ button.circle {
   header {
   grid-column-start: 1;
   grid-column-end: span 1;
-  grid-row-start: 1;
-  grid-row-end: span 1;
+  align-content: center;
+
   }
 
 
