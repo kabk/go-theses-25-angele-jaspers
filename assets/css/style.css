@@ -88,12 +88,11 @@ a:hover {
 
 
 h1 {
-  font-weight: 100;
-  margin: 0;
+  font-weight: 300;
+  margin: -2rem;
   padding: 0;
   font-size: 1.2rem;
   line-height: 2rem;
-  transform: translateY(-2rem);
   text-align: center;
 
 }
@@ -101,7 +100,7 @@ h1 {
 h2 {
   
   font-style: normal;
-  font-weight: 100;
+  font-weight: 300;
   margin-top: 2.4rem;
   margin-bottom: 1.2rem;
   font-size: 1.2rem;
@@ -114,7 +113,7 @@ h2 {
 
 h3 {
   font-style: normal;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 1.2rem;
   margin-top: 2.4rem;
   margin-bottom: 1.2rem;
@@ -147,7 +146,7 @@ p,
 dl,
 ol,
 ul {
-    font-weight: 200;
+    font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.6rem;
 }
@@ -328,7 +327,7 @@ sup {
   margin-top: 10px;
   padding-right: 20px;
   font-size: 0.9rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 
@@ -589,33 +588,6 @@ button.circle {
   background-color: green;
   left: calc(100vw - 50px);
   top: calc(100vh - 50px);
-}
-
-.square {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  height: 30px;
-
-  width: 30px;
-}
-
-#greensquare {
-  
-  top: calc(50vh - 15px);
-}
-
-#seguin {
-  width:75%;
-}
-
-
-#mark13 {
-  display: auto;
-}
-
-#fig13 {
-  margin: inherit;
 }
 
 
@@ -1053,7 +1025,46 @@ display: inline;
 @media (max-width: 779px) {
 
   /* your 'mobile' overriding css properties here */
+  p {
+    font-weight: 500;
+  }
 
+
+
+
+button.circle {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  z-index: 105;
+  cursor: pointer;
+  border: 0;
+}
+
+
+#bluecircle {
+  background-color: blue;
+}
+
+#redcircle {
+  background-color: red;
+  top: calc(100vh - 80px);
+  
+}
+
+#yellowcircle {
+  background-color: yellow;
+  left: calc(100vw - 50px);
+}
+
+#greencircle {
+  background-color: green;
+  left: calc(100vw - 50px);
+  top: calc(100vh - 80px);
+}
 
   .page-container {
     display: grid;
@@ -1082,15 +1093,6 @@ display: inline;
     grid-column-end: span 1;
   }
 
-
-
-  
-
-
-
-
-
-
   section {
     
     grid-column-start: 1;
@@ -1113,9 +1115,6 @@ display: inline;
   
   }
   
-
-
-
 
   .imagecolumn {
   display: none;
@@ -1235,7 +1234,7 @@ display: inline;
   padding: 0;
   font-size: 0.9rem;
   line-height: 1.2rem;
-  font-weight: 200;
+  font-weight: 300;
   z-index: 1;
   box-sizing: border-box;
 }
