@@ -1026,7 +1026,7 @@ display: inline;
 
   /* your 'mobile' overriding css properties here */
   p {
-    font-weight: 500;
+    font-weight: normal;
   }
 
 
@@ -1073,6 +1073,7 @@ button.circle {
 
 
   .textelement {
+    font-weight: normal;
     grid-column-start: 1;
     grid-column-end: span 1;
     padding-right: 20px;
