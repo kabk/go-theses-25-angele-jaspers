@@ -10,21 +10,43 @@
   to generate your own font for the web from .ttf or .oft files 
 */
 
-@font-face {
-    font-family: 'Your Font Name';
-    src: url('../fonts/yourfontname/yourfontname-roman.woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}
+
 
 @font-face {
     font-family: 'Your Font Name';
     src: url('../fonts/yourfontname/yourfontname-italic.woff2');
-    font-weight: normal;
+    font-weight: 200;
     font-style: italic;
     font-display: block;
 }
+
+@font-face {
+  font-family: 'RoutedGothic';
+  src: url('../fonts/RoutedGothic/RoutedGothic.woff2') format('woff2'),
+      url('../fonts/RoutedGothic/RoutedGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'RoutedGothic';
+  src: url('../fonts/RoutedGothic/RoutedGothic-Italic.woff2') format('woff2'),
+      url('../fonts/RoutedGothic/RoutedGothic-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'RoutedGothic';
+  src: url('../fonts/RoutedGothic/RoutedGothic-Half-Italic.woff2') format('woff2'),
+      url('../fonts/RoutedGothic/RoutedGothic-Half-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: block;
+}
+
 
 
 
@@ -37,7 +59,7 @@
   /* --color-text-link: rgba(0,0,255,0.8);
   --color-text-link-hover: rgba(0,0,255,0.4);*/
   /* Font values */
-  --font-text: 'Your Font Name', 'Helvetica', 'Arial', sans-serif;
+  --font-text: 'Helvetica', 'Arial', sans-serif;
   --font-size: 24px;
   /* Margin value */
   --margin: 1rem;
@@ -64,7 +86,7 @@ body {
   padding: 0;
   height:auto;
   overflow-y:auto;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
   font-weight: 300;
   hyphens: auto;
   transition: all 0.3s ease;
@@ -89,7 +111,6 @@ a:hover {
 
 h1 {
   font-weight: 300;
-  margin: -3rem;
   padding: 0;
   font-size: 1.2rem;
   line-height: 2rem;
@@ -1027,7 +1048,7 @@ display: inline;
   /* your 'mobile' overriding css properties here */
 
 
-
+/* 
 
 button.circle {
   position: fixed;
@@ -1061,36 +1082,41 @@ button.circle {
   background-color: green;
   left: calc(100vw - 50px);
   top: calc(100vh - 80px);
-}
+} */
 
   .page-container {
     display: grid;
     grid-template-columns: 100%;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
   }
 
 
   .textelement {
     grid-column-start: 1;
     grid-column-end: span 1;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding:20px;
+    box-sizing: border-box;
   }
 
   h1, h2, h3 {
     grid-column-start: 1;
     grid-column-end: span 1;
-    line-break: auto;
-    hyphens: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
  
   }
 
-  h1 {
+  /* h1 {
    
     padding-top: 20vh; 
       
     
     
-  }
+  } */
 
   fieldset{
     grid-column-start: 1;
@@ -1113,7 +1139,7 @@ button.circle {
     text-align: justify;
     grid-column-start: 1;
     grid-column-end: span 1;
-    grid-template-columns:100%;
+    grid-template-columns: 100%;
     padding-top: 0;
     padding-bottom: 1.2rem;
   
@@ -1155,7 +1181,7 @@ button.circle {
   grid-column-start: 1;
   grid-column-end: span 1;
   align-content: center;
-
+  height: 100vh;
   }
 
 
@@ -1167,7 +1193,8 @@ button.circle {
   display: grid;
   grid-template-columns: 100%;
   background-color: rgb(238, 238, 238);
-  min-height: 100vh;
+  min-height: 100%;
+ 
   }
 
 
@@ -1176,13 +1203,13 @@ button.circle {
 
 #dropdownmenu-content{
   position: relative;
-  width: 100vw;
+  width: 100%;
 
 }
 
 #imagegallery-content{
   position: relative;
-  width: 100vw;
+  width: 100%;
 
 }
 
@@ -1193,23 +1220,23 @@ button.circle {
 }
 
 #dropdown-bibliography{
-  width: 100vw;
+  width: 100%;
 }
 
 .acknowledgements{
   position: fixed;
-  left: 0vw;
+  left: 0;
 
 }
 
 #acknowledgements-content{
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 
 #acknowledgements-content > p{
-  width: 100vw;
+  width: 100%;
 }
 
 
@@ -1241,6 +1268,16 @@ button.circle {
   font-weight: 300;
   z-index: 1;
   box-sizing: border-box;
+}
+
+mark.fig-link {
+  background-color: blue;
+  cursor:auto;
+  text-decoration: none;
+}
+
+mark.fig-link:hover {
+  text-decoration: none;
 }
 
 
