@@ -1048,12 +1048,19 @@ display: inline;
   /* your 'mobile' overriding css properties here */
 
 
-
+.page-container {
+  display: grid;
+  grid-template-columns: 100% ;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+    
+ }
 
 button.circle {
   position: fixed;
-  top: 10%;
-  left: 10%;
+  top: 20px;
+  left: 20px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -1069,37 +1076,27 @@ button.circle {
 
 #redcircle {
   background-color: red;
-  top: calc(90% - 30px);
+  bottom: 20px;
   
 }
 
 #yellowcircle {
   background-color: yellow;
-  left: calc(90% - 30px);
+  left: calc(100% - 50px);
 }
 
 #greencircle {
   background-color: green;
-  left: calc(90% - 30px);
-  top: calc(90% - 30px);
-} */
+  left: calc(100%- 50px);
+  top: calc(100% - 50px);
+} 
 
-  .page-container {
-    display: grid;
-    grid-template-columns: 100%;
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    
-  }
-
-
-  .textelement {
-    grid-column-start: 1;
-    grid-column-end: span 1;
-    padding:20px;
-    box-sizing: border-box;
-  }
+.textelement {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  padding:20px;
+  box-sizing: border-box;
+}
 
   h1, h2, h3 {
     grid-column-start: 1;
