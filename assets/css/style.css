@@ -1076,7 +1076,7 @@ button.circle {
 
 #redcircle {
   background-color: red;
-  bottom: 20px;
+  top: calc(100% - 50px);
   
 }
 

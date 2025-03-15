@@ -85,6 +85,12 @@ docReady(function () {
     });
   });
 
+
+
+
+
+
+
   // Function to close the footnote panel when clicking anywhere outside
   document.addEventListener("click", function (e) {
     const footnotePanel = document.getElementById("footnote-panel");
@@ -153,7 +159,7 @@ docReady(function () {
       // Toggle content visibility based on checkbox
       if (trueCheckbox.checked) {
         content.style.display = "grid"; // Show content when true is selected
-      } else if (falseCheckbox.checked) {
+      } else if (falseCheckbox.checked || !trueCheckbox.checked) {
         content.style.display = "none"; // Hide content when false is selected
       }
     });
