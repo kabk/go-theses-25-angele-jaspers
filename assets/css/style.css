@@ -195,7 +195,7 @@
 
 
 @font-face {
-  font-family: 'Helvetica';
+  font-family: 'Helvetica-Light';
   src: url('Helvetica-Light.woff2') format('woff2'),
       url('Helvetica-Light.woff') format('woff');
   font-weight: 300;
@@ -204,7 +204,7 @@
 }
 
 @font-face {
-  font-family: 'Helvetica';
+  font-family: 'Helvetica-Light';
   src: url('Helvetica-LightOblique.woff2') format('woff2'),
       url('Helvetica-LightOblique.woff') format('woff');
   font-weight: 300;
@@ -223,7 +223,7 @@
   /* --color-text-link: rgba(0,0,255,0.8);
   --color-text-link-hover: rgba(0,0,255,0.4);*/
   /* Font values */
-  --font-text: 'Helvetica', 'Times New Roman', 'Arial', sans-serif;
+  --font-text: 'Helvetica-Light', 'Times New Roman', 'Arial', sans-serif;
   --font-size: 24px;
   /* Margin value */
   --margin: 1rem;
@@ -250,7 +250,7 @@ body {
   padding: 0;
   height:auto;
   overflow-y:auto;
-  font-family: 'Helvetica', 'Times New Roman', Arial, sans-serif;
+  font-family: 'Helvetica-Light', 'Times New Roman', Arial, sans-serif;
   font-weight: 300;
   hyphens: auto;
   transition: all 0.3s ease;
