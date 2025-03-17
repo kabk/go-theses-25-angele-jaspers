@@ -46,16 +46,24 @@ docReady(function () {
     });
   });
 
-  // Close the panel when a link inside the panel is clicked
-  circleButtonsContents.forEach(function (content) {
-    const links = content.querySelectorAll("a"); // assuming the links inside the panel are <a> elements
 
-    links.forEach(function (link) {
-      link.addEventListener("click", function () {
-        content.classList.remove("is-visible");
-      });
-    });
-  });
+
+
+
+
+  // // Close the panel when a link inside the panel is clicked
+  // circleButtonsContents.forEach(function (content) {
+  //   const links = content.querySelectorAll("a"); // assuming the links inside the panel are <a> elements
+
+  //   links.forEach(function (link) {
+  //     link.addEventListener("click", function () {
+  //       content.classList.remove("is-visible");
+  //     });
+  //   });
+  // });
+
+
+  
 
   // Function to show the footnote in the panel
   document.querySelectorAll(".footnote a").forEach((anchor) => {
@@ -84,10 +92,6 @@ docReady(function () {
       }
     });
   });
-
-
-
-
 
 
 
@@ -134,6 +138,54 @@ docReady(function () {
     link.addEventListener("click", toggleImageSize); // Trigger enlargement on image click
   });
 
+
+  
+    // Close the panel when a link inside the panel is clicked
+    circleButtonsContents.forEach(function (content) {
+      const links = content.querySelectorAll("a"); // assuming the links inside the panel are <a> elements
+  
+      links.forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default anchor behavior
+  
+          // Get the target element ID from the link's href
+          const targetId = this.getAttribute("href").substring(1); // Remove the '#' from href
+          const targetElement = document.getElementById(targetId);
+  
+          if (targetElement) {
+            // Find the section containing the target element
+            const section = targetElement.closest("section");
+  
+            if (section) {
+              // Find the checkboxes and content div within the section
+              const trueCheckbox = section.querySelector('input[type="checkbox"][id^="true-"]');
+              const falseCheckbox = section.querySelector('input[type="checkbox"][id^="false-"]');
+              const contentDiv = section.querySelector(".content");
+  
+              if (trueCheckbox && falseCheckbox && contentDiv) {
+                // If the section is not visible, make it visible
+                if (!trueCheckbox.checked) {
+                  trueCheckbox.checked = true;
+                  falseCheckbox.checked = false;
+                  contentDiv.style.display = "grid"; // Show the content
+                }
+              }
+            }
+  
+            // Scroll to the target element
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+  
+          // Close the panel
+          content.classList.remove("is-visible");
+        });
+      });
+    });
+  
+    
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
   checkboxes.forEach((checkbox) => {
@@ -164,6 +216,7 @@ docReady(function () {
       }
     });
   });
+  
 
   // Select the checkboxes
   const yesCheckbox = document.getElementById("yes");

@@ -46,7 +46,171 @@
   font-style: italic;
   font-display: block;
 }
+/* 
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Black.woff2') format('woff2'),
+      url('HelveticaNeue-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-BlackItalic.woff2') format('woff2'),
+      url('HelveticaNeue-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Bold.woff2') format('woff2'),
+      url('HelveticaNeue-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-HeavyItalic.woff2') format('woff2'),
+      url('HelveticaNeue-HeavyItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Heavy.woff2') format('woff2'),
+      url('HelveticaNeue-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-BoldItalic.woff2') format('woff2'),
+      url('HelveticaNeue-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Light.woff2') format('woff2'),
+      url('HelveticaNeue-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-LightItalic.woff2') format('woff2'),
+      url('HelveticaNeue-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Italic.woff2') format('woff2'),
+      url('HelveticaNeue-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-MediumItalic.woff2') format('woff2'),
+      url('HelveticaNeue-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Medium.woff2') format('woff2'),
+      url('HelveticaNeue-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-ThinItalic.woff2') format('woff2'),
+      url('HelveticaNeue-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Thin.woff2') format('woff2'),
+      url('HelveticaNeue-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-Roman.woff2') format('woff2'),
+      url('HelveticaNeue-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-UltraLightItalic.woff2') format('woff2'),
+      url('HelveticaNeue-UltraLightItalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('HelveticaNeue-UltraLight.woff2') format('woff2'),
+      url('HelveticaNeue-UltraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+} */
+
+
+
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-Light.woff2') format('woff2'),
+      url('Helvetica-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-LightOblique.woff2') format('woff2'),
+      url('Helvetica-LightOblique.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
 
 
 
@@ -59,7 +223,7 @@
   /* --color-text-link: rgba(0,0,255,0.8);
   --color-text-link-hover: rgba(0,0,255,0.4);*/
   /* Font values */
-  --font-text: 'Helvetica', 'Arial', sans-serif;
+  --font-text: 'Helvetica', 'Times New Roman', 'Arial', sans-serif;
   --font-size: 24px;
   /* Margin value */
   --margin: 1rem;
@@ -86,10 +250,11 @@ body {
   padding: 0;
   height:auto;
   overflow-y:auto;
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Helvetica', 'Times New Roman', Arial, sans-serif;
   font-weight: 300;
   hyphens: auto;
   transition: all 0.3s ease;
+  /* letter-spacing: 0.02rem; */
   
 }
 
@@ -185,7 +350,7 @@ p {
 .imagecolumn {
   grid-column-start: 1;
   grid-column-end: span 1;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.3;
   font-weight: 300;
   box-sizing: border-box;
@@ -227,7 +392,7 @@ p {
 }
 
 .figcaption > p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.2rem;
   margin-top: 0.2rem;
   margin-left: 10px;
@@ -347,7 +512,7 @@ sup {
   margin-bottom: 0px;
   margin-top: 10px;
   padding-right: 20px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -362,26 +527,7 @@ sup {
 }
 
 
-/*
 
-form {
-  text-align: center;
-  float: right;
-  clear: right;
-  width: 21vw;
-  margin-right: -50%;
-  margin-top: 0;
-  margin-bottom: 0;
-  vertical-align: baseline;
-  position: relative;
-  top: -2.6rem;
-  right: 0;
-  padding-left: 2vw;
-  padding-right: 2vW;
-  padding-top: 0;
-  padding-bottom: 1vW;
-  
-}*/
 
 
 
@@ -490,7 +636,7 @@ mark{
  align-self: center;
 }
 
-.yellow-menu{
+.green-menu{
   position: fixed;
   left: 76vw;
   top: 0;
@@ -508,7 +654,7 @@ mark{
 
 #dropdown-bibliography > p{
   margin-left: 1rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.2rem;
   padding-left: 20px;
   padding-right: 20px;
@@ -519,12 +665,12 @@ mark{
 }
 
 #dropdown-bibliography > ol {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.2rem;
 }
 
 #dropdown-bibliography > ol > li > p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.2rem;
   padding-left: 20px;
   padding-right: 20px;
@@ -563,7 +709,7 @@ span.longlink {
 #acknowledgements-content > p{
   position: absolute;
   bottom: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.2rem;
   width: 24vw;
   padding-left: 20px;
@@ -592,23 +738,25 @@ button.circle {
 
 #bluecircle {
   background-color: blue;
+  top: calc(100vh - 50px);
 }
 
 #redcircle {
   background-color: red;
-  top: calc(100vh - 50px);
+
   
 }
 
 #yellowcircle {
-  background-color: yellow;
+  background-color: rgb(255, 230, 0);
   left: calc(100vw - 50px);
+  top: calc(100vh - 50px);
 }
 
 #greencircle {
   background-color: green;
   left: calc(100vw - 50px);
-  top: calc(100vh - 50px);
+ 
 }
 
 
@@ -1072,23 +1220,23 @@ button.circle {
 
 #bluecircle {
   background-color: blue;
+  top: calc(100% - 50px);
 }
 
 #redcircle {
   background-color: red;
-  top: calc(100% - 50px);
   
 }
 
 #yellowcircle {
-  background-color: yellow;
-  left: calc(100% - 50px);
+  background-color: rgb(255, 230, 0);;
+  left: calc(100%- 50px);
+  top: calc(100% - 50px);
 }
 
 #greencircle {
   background-color: green;
-  left: calc(100%- 50px);
-  top: calc(100% - 50px);
+  left: calc(100% - 50px);
 } 
 
 .textelement {
@@ -1205,13 +1353,13 @@ button.circle {
 }
 
 #imagegallery-content{
-  position: relative;
+
   width: 100%;
 
 }
 
 
-.yellow-menu{
+.green-menu{
   position: fixed;
   left: 0;
 }
@@ -1242,7 +1390,7 @@ button.circle {
 
 .footnote-panel {
   position: fixed;
-  bottom: 10px;
+  bottom: 22px;
   left:  70px;
   height: fit-content;
   width: calc(100vw - 140px);
@@ -1260,7 +1408,7 @@ button.circle {
   margin-bottom: 0px;
   margin-top: 10px;
   padding: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.2rem;
   font-weight: 300;
   z-index: 1;
