@@ -1180,7 +1180,7 @@ button.circle {
   header {
   grid-column-start: 1;
   grid-column-end: span 1;
-  align-content: center;
+  place-items: center;
   height: 100vh;
   }
 
