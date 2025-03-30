@@ -706,7 +706,7 @@ header {
   grid-column-end: span 4;
   height: 100vh;
   text-align: center;
-  align-content: center;
+  place-content: center;
   margin: 0;
   padding: 0;
 }
@@ -1223,7 +1223,7 @@ button.circle {
   font-weight: 300;
   z-index: 1;
   box-sizing: border-box;
-  
+  text-align: left;
 }
 
 mark.fig-link {
