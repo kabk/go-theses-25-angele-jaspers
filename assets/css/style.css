@@ -68,6 +68,22 @@
 }
 
 
+@font-face {
+  font-family: 'Hershey Futura';
+  src:url('../fonts/Hershey-Noallies-Futura-Simplex/Hershey-Noailles-Futura-Simplex-Regular.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hershey Futura Light';
+  src:url('../fonts/Hershey-Noallies-Futura-Simplex/Hershey-Noailles-Futura-Simplex-Light.woff') format('woff');
+  font-weight: 300;
+  font-style:  normal;
+  font-display: swap;
+}
+
 
 /* VARIABLES */
 
@@ -78,7 +94,7 @@
   /* --color-text-link: rgba(0,0,255,0.8);
   --color-text-link-hover: rgba(0,0,255,0.4);*/
   /* Font values */
-  --font-text: 'Helvetica-Light', 'Times New Roman', serif;
+   --font-text: 'Hershey Futura', 'Helvetica-Light', 'Times New Roman', serif; 
   --font-size: 24px;
   /* Margin value */
   --margin: 1rem;
@@ -105,7 +121,7 @@ body {
   padding: 0;
   height:auto;
   overflow-y:auto;
-  font-family: 'Helvetica-Light', 'Times New Roman', serif;
+  font-family: 'Hershey Futura', 'Helvetica-Light', 'Times New Roman', serif;
   font-weight: 300;
   hyphens: auto;
   transition: all 0.3s ease;
@@ -116,6 +132,7 @@ body {
 .page-container{
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+
 }
 
 a {
@@ -132,8 +149,8 @@ a:hover {
 h1 {
   font-weight: 300;
   padding: 0;
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
   text-align: center;
 
 }
@@ -144,8 +161,8 @@ h2 {
   font-weight: 300;
   margin-top: 2.4rem;
   margin-bottom: 1.2rem;
-  font-size: 1.2rem;
-  line-height: 1;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
   text-align: center;
   text-decoration: none;
   grid-column-start: 2;
@@ -155,10 +172,10 @@ h2 {
 h3 {
   font-style: normal;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 2.4rem;
   margin-bottom: 1.2rem;
-  line-height: 1;
+  line-height: 1.8rem;
   text-align: center;
   grid-column-start: 2;
   grid-column-end: span 2;
@@ -188,8 +205,8 @@ dl,
 ol,
 ul {
     font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 1.6rem;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
 }
 
 p {
@@ -205,8 +222,8 @@ p {
 .imagecolumn {
   grid-column-start: 1;
   grid-column-end: span 1;
-  font-size: 1rem;
-  line-height: 1.3;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   font-weight: 300;
   box-sizing: border-box;
   text-align: center;
@@ -247,15 +264,13 @@ p {
 }
 
 .figcaption > p {
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   margin-top: 0.2rem;
   margin-left: 10px;
   margin-right: 10px;
   text-align: left;
   hyphens: none;
-  
-
 }
 
 .image.enlarged .figcaption {
@@ -272,6 +287,9 @@ mark.fig-link {
   background-color: blue;
   cursor: pointer;
   text-decoration: none;
+  color:white;
+  font-size: 90%;
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
 
 mark.fig-link:hover {
@@ -283,126 +301,112 @@ mark.fig-link:hover {
   cursor:pointer;
 }
 
-
-/*
-.image {
-  margin-right: 20px;
-  margin-bottom: 20px;
-  max-width: 300px;
-}
-
-.image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}*/
-
-
-
-/*
-.image-panel {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-}
-
-#image-container {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: hidden;
-  background-color: #fff;
-
-  text-align: center;
-  border: 1px black solid;
-}
-
-#image-container img {
-  margin: 10px;
-  max-height: 50vh;
-  max-width: 30vw;
-  object-fit: contain;
-}*/
-
-
-
-
 sup {
   position: relative;
   z-index: 0;
+  line-height: inherit;
 }
 
 .footnote{
-  font-size: 100%;;
+  font-size: 90%;;
   position: relative;
-  top:0;
+  top: 0;
   left:0;
   background-color: green;
   color: white;
   z-index: 0;
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
 
 .footnote-panel {
+  display: none;
   position: fixed;
-  bottom: 90px;
+  top: 70px;
   left: 76vw;
   width: 24vw;
-  height: calc(100vh - 90px);
+  height: fit-content;
   padding: 20px;
-  border-left: 0;
-  display: none;
-  z-index: 2;
+  padding-top: 0;
+  z-index: 20;
   box-sizing: border-box;
 }
 
 .footnote-panel #footnote-content {
-  position: absolute;
-  bottom: 0px;
+  position: absolute; 
   margin-bottom: 0px;
-  margin-top: 10px;
-  padding-right: 20px;
-  font-size: 1rem;
+  margin-top: 0px;
+  padding-right: 70px;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   font-weight: 300;
+  text-align: justify;
+  /* top: auto; */
 }
-
 
 .footnote-text {
   display: none;
 }
 
 .footnotereverse {
-  background-color: green;
-  color: white;
+  /* background-color: green;
+  color: white; */
+  padding-right: 0.2rem;
+
 }
-
-
-
-
-
 
 fieldset {
   padding:0;
   align-items: center;
   line-height: 1;
   border: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   margin-top: 0.6rem;
   margin-bottom: 0.6rem;
   text-align: center;
- }
+}
 
-/*
- input[type="checkbox"]:checked + label + .content {
-  display: block;
-  max-height: 500px;
-}*/
+#titlecheckbox {
+  font-size: 3rem;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: white;
+  margin: 0;
+  font: inherit;
+  color: black;
+  width: 0.7em;
+  height: 0.7em;
+  border: 0.07em solid currentColor;
+  border-radius: 2px;
+  transform: translateY(0.02rem);
+  cursor: pointer;
+ 
+}
+
+
+
+input[type="checkbox"]:checked {
+  background-color: rgb(255, 230, 0);
+} 
+
+
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
 
 fieldset > input.submit-button {
   justify-self: end;
@@ -415,18 +419,6 @@ fieldset > input.submit-button {
  #false:checked + span {
   text-decoration: underline;
  }
-
-
-
-
-mark{
-  background-color: blue;
-  color:white;
- 
-}
-
-
-
 
 
 .dropdownmenu{
@@ -509,8 +501,8 @@ mark{
 
 #dropdown-bibliography > p{
   margin-left: 1rem;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
@@ -520,13 +512,13 @@ mark{
 }
 
 #dropdown-bibliography > ol {
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
 }
 
 #dropdown-bibliography > ol > li > p {
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
@@ -564,8 +556,8 @@ span.longlink {
 #acknowledgements-content > p{
   position: absolute;
   bottom: 0;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   width: 24vw;
   padding-left: 20px;
   padding-right: 20px;
@@ -657,20 +649,6 @@ section .content {
 
 }
 
-
-/*
-section .content.expanded {
-  display: grid;
-  text-align: justify;
-  grid-column-start: 1;
-  grid-column-end: span 4;
-  grid-template-columns: 25% 25% 25% 25%;
-  padding-top: 0;
-  padding-bottom: 1.2rem;
-  max-height: 500px;
-  
-} */
-
 label {
   cursor: pointer;
 }
@@ -682,12 +660,21 @@ label {
 }
 
 .textelement {
+  clear: both;
   align-items: start;
   text-align: justify;
- 
   grid-column-start: 2;
   grid-column-end: span 2;
   margin: 0;
+}
+
+.false-text-element{
+  display: none;
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  margin:0;
+
 }
 
 .level2 {
@@ -727,13 +714,14 @@ header {
 #footnote-1{
   background-color: white;
   color: black;
-  font-size: 80%;
+  font-size: 70%;
   position: relative;
   top: -0.3rem;
 }
 
 p.header {
   text-align: center;
+  
 }
 
 
@@ -744,8 +732,8 @@ font-size: 3rem;
 
 
 .menu{
-  font-size: 1.2rem;
-  line-height: 1.6rem;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
   list-style: none;
   padding-left: 0;
 }
@@ -776,36 +764,9 @@ a:hover {
   padding-bottom: 6rem;
 }
 
-
 #bibliography{
   display: none;
 }
-/*
-
-#bibliography {
-  text-align: left;
-  overflow-wrap: break-word; 
-  hyphens: none; 
-  line-break: anywhere;
-} 
-
-#bibliography > p {
-  font-size: 0.9rem;
-  line-height: 1.2;
-}
-
-#image-sources {
-  text-align: left;
-  overflow-wrap: break-word; 
-  hyphens: none; 
-  line-break: anywhere;
-}
-
-#image-sources > p {
-  font-size: 0.9rem;
-  line-height: 1.2;
-  text-align: left;
-}*/
 
 /* Chapter Epigraphs */
 div.epigraph {
@@ -831,8 +792,11 @@ div.epigraph > blockquote > footer > cite {
 }
 /* end chapter epigraphs styles */
 
-blockquote {
-  font-size: 1.1rem;
+.blockquote {
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+ font-style: italic;
+  padding-left: 5%;
 }
 
 blockquote p {
@@ -878,15 +842,6 @@ li:not(:first-child) {
 /* Sidenotes, margin notes, figures, captions */
 
 
-/*
-
-blockquote .sidenote,
-blockquote .marginnote {
-  margin-right: -82%;
-  min-width: 59%;
-  text-align: left;
-}
-*/
 div.fullwidth,
 table.fullwidth {
   width: 100%;
@@ -1135,7 +1090,7 @@ button.circle {
   
   
   section .content {
-    display: grid;
+    display: none;
     text-align: justify;
     grid-column-start: 1;
     grid-column-end: span 1;
@@ -1208,7 +1163,6 @@ button.circle {
 }
 
 #imagegallery-content{
-
   width: 100%;
 
 }
@@ -1245,6 +1199,7 @@ button.circle {
 
 .footnote-panel {
   position: fixed;
+  top: auto;
   bottom: 22px;
   left:  70px;
   height: fit-content;
@@ -1263,11 +1218,12 @@ button.circle {
   margin-bottom: 0px;
   margin-top: 10px;
   padding: 0;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
   font-weight: 300;
   z-index: 1;
   box-sizing: border-box;
+  
 }
 
 mark.fig-link {

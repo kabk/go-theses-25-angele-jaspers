@@ -63,46 +63,73 @@ docReady(function () {
   // });
 
 
-  
+
 
   // Function to show the footnote in the panel
-  document.querySelectorAll(".footnote a").forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent default anchor behavior
+document.querySelectorAll(".footnote a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent default anchor behavior
 
-      let footnotePanel = document.getElementById("footnote-panel");
-      const footnoteId = this.getAttribute("data-footnote"); // Assuming data-footnote holds the footnote ID
-      const footnoteText = document.getElementById(
-        `fn-${footnoteId}`
-      ).innerHTML; // Get the corresponding footnote text
+    let footnotePanel = document.getElementById("footnote-panel");
+    const footnoteId = this.getAttribute("data-footnote"); // Get the footnote ID from the clicked anchor
+    const footnoteText = document.getElementById(
+      `fn-${footnoteId}`
+    ).innerHTML; // Get the corresponding footnote text
 
-      const footnoteContent = document.getElementById("footnote-content");
-      footnoteContent.innerHTML = footnoteText; // Set footnote text inside the panel
+    const footnoteContent = document.getElementById("footnote-content");
+    footnoteContent.innerHTML = footnoteText; // Set the footnote text inside the panel
 
-      // Close all panels opened by the circle buttons
-      circleButtonsContents.forEach((content) => {
-        content.classList.remove("is-visible"); // Remove the is-visible class from all panels
-      });
+    // Show the footnote panel if it's not already visible
+    if (footnotePanel.style.display === "none" || footnotePanel.style.display === "") {
+      footnotePanel.style.display = "block"; // Show the panel if it's not visible
+    }
 
-      // Show the footnote panel
-      if (footnotePanel.style.display === "block") {
-        footnotePanel.style.display = "none";
-      } else {
-        footnotePanel.style.display = "block";
-      }
+    // Update the current footnote id in the panel so we can prevent toggling if the same one is clicked
+    footnotePanel.setAttribute("data-current-footnote", footnoteId);
+
+    // Close all panels opened by the circle buttons (if any)
+    circleButtonsContents.forEach((content) => {
+      content.classList.remove("is-visible"); // Remove the is-visible class from all panels
     });
   });
+});
 
+// Function to close the footnote panel when scrolling the page
+window.addEventListener("scroll", function () {
+  const footnotePanel = document.getElementById("footnote-panel");
+  footnotePanel.style.display = "none"; // Close the panel when the page is scrolled
+});
 
+// Function to close the footnote panel when clicking anywhere outside
+document.addEventListener("click", function (e) {
+  const footnotePanel = document.getElementById("footnote-panel");
 
-  // Function to close the footnote panel when clicking anywhere outside
-  document.addEventListener("click", function (e) {
+  // If the click is outside the footnote panel and the footnote links, close the panel
+  if (
+    !footnotePanel.contains(e.target) && 
+    !e.target.closest(".footnote a")
+  ) {
+    footnotePanel.style.display = "none"; // Close the panel
+  }
+});
+
+// Prevent the panel from closing when clicking on a new footnote, just update the content
+document.querySelectorAll(".footnote a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
     const footnotePanel = document.getElementById("footnote-panel");
-    // If the click is outside the footnote panel, close it
-    if (!footnotePanel.contains(e.target) && !e.target.closest(".footnote a")) {
-      footnotePanel.style.display = "none";
+    const currentFootnote = footnotePanel.getAttribute("data-current-footnote");
+
+    // If the clicked footnote is the same as the currently displayed one, do nothing
+    if (this.getAttribute("data-footnote") === currentFootnote) {
+      return; // Prevent updating content if the same footnote is clicked
     }
   });
+});
+
+
+
+
+
 
   // Function to enlarge or shrink the image when clicked (either [fig.x] or the image itself)
   function toggleImageSize(event) {
@@ -200,6 +227,9 @@ docReady(function () {
       const trueCheckbox = section.querySelector(`#true-${sectionId}`);
       const falseCheckbox = section.querySelector(`#false-${sectionId}`);
 
+      // Select the extra text element for the 'false' checkbox
+      const falseTextElement = section.querySelector(".false-text-element");
+
       // If one checkbox is checked, uncheck the other
       if (this === trueCheckbox && trueCheckbox.checked) {
         falseCheckbox.checked = false; // Uncheck the false checkbox if true is selected
@@ -208,15 +238,73 @@ docReady(function () {
         trueCheckbox.checked = false; // Uncheck the true checkbox if false is selected
       }
 
-      // Toggle content visibility based on checkbox
+      // // Toggle content visibility based on checkbox
+      // if (trueCheckbox.checked) {
+      //   content.style.display = "grid"; // Show content when true is selected
+      // } else if (falseCheckbox.checked || !trueCheckbox.checked) {
+      //   content.style.display = "none"; // Hide content when false is selected
+      // }
+
+
+    // Toggle content visibility based on checkbox
       if (trueCheckbox.checked) {
         content.style.display = "grid"; // Show content when true is selected
-      } else if (falseCheckbox.checked || !trueCheckbox.checked) {
-        content.style.display = "none"; // Hide content when false is selected
+         falseTextElement.style.display = "none"; // Hide the extra text when true is selected
+      } else if (falseCheckbox.checked) {
+         content.style.display = "none"; // Hide content when false is selected
+         falseTextElement.style.display = "grid"; // Show the extra text when false is selected
+      } else {
+         content.style.display = "none"; // Hide content if neither checkbox is checked
+         falseTextElement.style.display = "none"; // Ensure the extra text is hidden
       }
+
+
     });
   });
   
+
+
+  // const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  // checkboxes.forEach((checkbox) => {
+  //   checkbox.addEventListener("change", function () {
+  //     const section = this.closest("section"); // Find the section for this checkbox
+  //     const content = section.querySelector(".content"); // Find the associated content div
+
+  //     // Extract the section ID from the checkbox ID
+  //     const sectionId = this.id.split("-")[1]; // 'intro' for #true-intro or 'overview' for #true-overview
+
+  //     // Find both checkboxes (true and false) within the section
+  //     const trueCheckbox = section.querySelector(`#true-${sectionId}`);
+  //     const falseCheckbox = section.querySelector(`#false-${sectionId}`);
+
+  //     // Select the extra text element for the 'false' checkbox
+  //     const falseTextElement = section.querySelector(".false-text-element");
+
+  //     // If one checkbox is checked, uncheck the other
+  //     if (this === trueCheckbox && trueCheckbox.checked) {
+  //       falseCheckbox.checked = false; // Uncheck the false checkbox if true is selected
+  //     }
+  //     if (this === falseCheckbox && falseCheckbox.checked) {
+  //       trueCheckbox.checked = false; // Uncheck the true checkbox if false is selected
+  //     }
+
+  //     // Toggle content visibility based on checkbox
+  //     if (trueCheckbox.checked) {
+  //       content.style.display = "grid"; // Show content when true is selected
+  //       falseTextElement.style.display = "none"; // Hide the extra text when true is selected
+  //     } else if (falseCheckbox.checked) {
+  //       content.style.display = "none"; // Hide content when false is selected
+  //       falseTextElement.style.display = "block"; // Show the extra text when false is selected
+  //     } else {
+  //       content.style.display = "none"; // Hide content if neither checkbox is checked
+  //       falseTextElement.style.display = "none"; // Ensure the extra text is hidden
+  //     }
+  //   });
+  // });
+
+
+
+
 
   // Select the checkboxes
   const yesCheckbox = document.getElementById("yes");
