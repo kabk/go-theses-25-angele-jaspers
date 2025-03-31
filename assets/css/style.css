@@ -704,9 +704,9 @@ header {
 #footnote-1{
   background-color: white;
   color: black;
-  font-size: 70%;
+  font-size: 50%;
   position: relative;
-  top: -0.3rem;
+  top: -1.3rem;
 }
 
 p.header {
