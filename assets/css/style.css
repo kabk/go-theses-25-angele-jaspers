@@ -132,6 +132,7 @@ body {
 .page-container{
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  
 
 }
 
@@ -697,6 +698,7 @@ header {
   height: 100vh;
   text-align: center;
   place-content: center;
+  place-items: center;
   margin: 0;
   padding: 0;
 }
@@ -1125,10 +1127,11 @@ button.circle {
 
   header {
   grid-column-start: 1;
-  grid-column-end: span 1;
+  grid-column-end: span 1; 
+  height: 100vh;
   place-items: center;
   place-content: center;
-  height: 100vh;
+ 
   }
 
 
