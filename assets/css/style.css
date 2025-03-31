@@ -20,35 +20,6 @@
     font-display: block;
 }
 
-/* @font-face {
-  font-family: 'RoutedGothic';
-  src: url('../fonts/RoutedGothic/RoutedGothic.woff2') format('woff2'),
-      url('../fonts/RoutedGothic/RoutedGothic.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'RoutedGothic';
-  src: url('../fonts/RoutedGothic/RoutedGothic-Italic.woff2') format('woff2'),
-      url('../fonts/RoutedGothic/RoutedGothic-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'RoutedGothic';
-  src: url('../fonts/RoutedGothic/RoutedGothic-Half-Italic.woff2') format('woff2'),
-      url('../fonts/RoutedGothic/RoutedGothic-Half-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: block;
-} */
-
-
-
 @font-face {
   font-family: 'Helvetica-Light';
   src: url('../fonts/HelveticaLight/Helvetica-Light.woff2') format('woff2'),
@@ -894,69 +865,6 @@ span.newthought {
   font-size: 1.2em;
 }
 
-/*input.margin-toggle {
-  display: none;
-} 
-
-input.image-toggle {
-  display: none;
-}
-
-label.sidenote-number {
-  display: inline-block;
-  max-height: 1.6rem; /* should be less than or equal to paragraph line-height 
-}
-
-label.margin-toggle:not(.sidenote-number) {
-  display: none;
-}
-
-label.image-toggle{
-  display: none;
-}
-
-.iframe-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  /*padding-top: 25px;
-  height: 0;
-}
-
-.iframe-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
-label.margin-toggle:not(.sidenote-number) {
-  display: inline;
-}
-
-label.image-toggle:not(.sidenote-number) {
-display: inline;
-}
-
-.sidenote {
-  display: none;
-}*/
-
-/*
-.margin-toggle:checked + .sidenote
-{
-  display: block;
-  float: left;
-  left: 1rem;
-  clear: both;
-  width: 95%;
-  margin: 1rem 2.5%;
-  vertical-align: baseline;
-  position: relative;
-}
-*/
-
 
 
 
@@ -1027,7 +935,6 @@ button.circle {
 
 #redcircle {
   background-color: red;
-  
 }
 
 #yellowcircle {
@@ -1048,95 +955,98 @@ button.circle {
   box-sizing: border-box;
 }
 
-  h1, h2, h3 {
-    grid-column-start: 1;
-    grid-column-end: span 1;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
- 
-  }
+h1, h2, h3 {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
 
-  h1 {
+h1 {
   place-self: center;
-  } 
+  font-size: 1.8rem;
+  line-height: 2rem;
+} 
 
-  fieldset{
-    grid-column-start: 1;
-    grid-column-end: span 1;
+#titlecheckbox {
+  font-size: 1.8rem;
   }
 
-  section {
-    
-    grid-column-start: 1;
-    grid-column-end: span 1;
-    display: grid;
-    grid-template-columns: 100%;
-    padding-top: 0;
-    padding-bottom:0;
-  }
-  
-  
-  section .content {
-    display: none;
-    text-align: justify;
-    grid-column-start: 1;
-    grid-column-end: span 1;
-    grid-template-columns: 100%;
-    padding-top: 0;
-    padding-bottom: 1.2rem;
-  
-  }
-  
+#footnote-1{
+  font-size: 80%;
+  top: -0.8rem;
+ }
 
-  .false-text-element{
-    grid-column-start: 1;
-    grid-column-end: span 1;
-  }
+fieldset{
+  grid-column-start: 1;
+  grid-column-end: span 1;
+}
 
-  .imagecolumn {
+section {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  display: grid;
+  grid-template-columns: 100%;
+  padding-top: 0;
+  padding-bottom:0;
+}
+  
+section .content {
   display: none;
-  }
-
-  .figure {
-    display: block;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    padding: 5% 20%;
-    box-sizing: border-box;
-
-  }
+  text-align: justify;
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  grid-template-columns: 100%;
+  padding-top: 0;
+  padding-bottom: 1.2rem;
+}
   
-  .figure > img {
-    align-self: center;
-    width: 100%;
-  }
+.false-text-element{
+  grid-column-start: 1;
+  grid-column-end: span 1;
+}
 
-  .figcaption {
-    display: block;
-    margin: 0;
-    position: relative;
-    text-align: center;
-  }
+.imagecolumn {
+  display: none;
+}
 
-  .figcaption > p {
-    margin: 0;
-    margin-top: 0.2rem;
-  }
+.figure {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  padding: 5% 20%;
+  box-sizing: border-box;
+}
+  
+.figure > img {
+  align-self: center;
+  width: 100%;
+}
 
-  header {
+.figcaption {
+  display: block;
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+.figcaption > p {
+  margin: 0;
+  margin-top: 0.2rem;
+}
+
+header {
   grid-column-start: 1;
   grid-column-end: span 1; 
   grid-row-start: 1;
   grid-row-end: span 1;
   place-items: center;
   place-content: center;
-  }
+}
 
-
-
-  .greybox{
+.greybox{
   grid-column-start: 1;
   grid-column-end: span 1; 
   position: relative;
@@ -1144,22 +1054,16 @@ button.circle {
   grid-template-columns: 100%;
   background-color: rgb(238, 238, 238);
   min-height: 100%;
-  }
-
-
-
+}
 
 #dropdownmenu-content{
   position: relative;
   width: 100%;
-
 }
 
 #imagegallery-content{
   width: 100%;
-
 }
-
 
 .green-menu{
   position: fixed;
@@ -1173,7 +1077,6 @@ button.circle {
 .acknowledgements{
   position: fixed;
   left: 0;
-
 }
 
 #acknowledgements-content{
@@ -1181,14 +1084,9 @@ button.circle {
   height: 100%;
 }
 
-
 #acknowledgements-content > p{
   width: 100%;
 }
-
-
-
-
 
 .footnote-panel {
   position: fixed;
@@ -1229,68 +1127,37 @@ mark.fig-link:hover {
   text-decoration: none;
 }
 
-
-
-
-
-  hr,
+hr,
   section > p,
   section > footer,
   section > table {
-      width: 100%;
-  }
+    width: 100%;
+}
 
-  pre > code {
-      width: 97%;
-  }
+pre > code {
+  width: 97%;
+}
 
-  section > dl,
-  section > ol,
-  section > ul {
-      width: 90%;
-  }
+section > dl,
+section > ol,
+section > ul {
+  width: 90%;
+}
 
-  
-
- 
-
-  blockquote {
-      margin-left: 1.5em;
-      margin-right: 0em;
-  }
-
-  blockquote p,
-  blockquote footer {
-      width: 100%;
-  }
-
-  label.margin-toggle:not(.sidenote-number) {
-      display: inline;
-  }
-
-  label.image-toggle:not(.sidenote-number) {
-    display: inline;
-  }
-
-  label {
-      cursor: pointer;
-  }
-
-  div.table-wrapper,
-  table {
-      width: 85%;
-  }
+label {
+ cursor: pointer;
+}
 
   
   /* utility classes, mobile */
 
-  .desktop-only{
-    display:none;
-  }
+.desktop-only{
+  display:none;
+}
 
-  .mobile-only{
-    display:block;
-  }
+.mobile-only{
+  display:block;
+}
 
 }
 
