@@ -321,21 +321,23 @@ sup {
 .footnote-panel {
   display: none;
   position: fixed;
-  top: 70px;
   left: 76vw;
+  bottom: 70px;
+  /* background-color: aquamarine; */
   width: 24vw;
-  height: fit-content;
+  height:fit-content;
   padding: 20px;
   padding-top: 0;
   z-index: 20;
   box-sizing: border-box;
+  
 }
 
 .footnote-panel #footnote-content {
-  position: absolute; 
+  position: relative; 
   margin-bottom: 0px;
   margin-top: 0px;
-  padding-right: 70px;
+  padding-right: 20px;
   font-size: 1.1rem;
   line-height: 1.3rem;
   font-weight: 300;
@@ -348,9 +350,9 @@ sup {
 }
 
 .footnotereverse {
-  /* background-color: green;
-  color: white; */
+
   padding-right: 0.2rem;
+
 
 }
 
@@ -500,23 +502,6 @@ fieldset > input.submit-button {
 }
 
 #dropdown-bibliography > p{
-  margin-left: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.3rem;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-  hyphens: auto;
-  text-indent: -1rem;
-  
-}
-
-#dropdown-bibliography > ol {
-  font-size: 1.1rem;
-  line-height: 1.3rem;
-}
-
-#dropdown-bibliography > ol > li > p {
   font-size: 1.1rem;
   line-height: 1.3rem;
   padding-left: 20px;
@@ -524,6 +509,12 @@ fieldset > input.submit-button {
   box-sizing: border-box;
   hyphens: auto;
 }
+
+.imagenumbers {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
 
 span.longlink {
   overflow-wrap: break-word; 
@@ -988,8 +979,8 @@ display: inline;
 /* WEBSITE MEDIA QUERIES */
 
 /* responsive typeface for various breaking points, sets the default 'rem' value */
-@media (max-width: 299px) { :root{--font-size: 12px;} html, body {font: var(--font-size) var(--font-text); } }
-@media (min-width: 299px) and (max-width: 340px) { :root{--font-size: 12px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (max-width: 299px) { :root{--font-size: 13px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 299px) and (max-width: 340px) { :root{--font-size: 13px;} html, body {font: var(--font-size) var(--font-text); } }
 @media (min-width: 340px) and (max-width: 440px) { :root{--font-size: 13px;} html, body {font: var(--font-size) var(--font-text); } }
 @media (min-width: 441px) and (max-width: 779px) { :root{--font-size: 14px;} html, body {font: var(--font-size) var(--font-text); } }
 @media (min-width: 780px) and (max-width: 992px) { :root{--font-size: 13px;} html, body {font: var(--font-size) var(--font-text); } }

@@ -65,6 +65,11 @@ docReady(function () {
 
 
 
+
+
+
+
+
   // Function to show the footnote in the panel
 document.querySelectorAll(".footnote a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -262,46 +267,6 @@ document.querySelectorAll(".footnote a").forEach((anchor) => {
     });
   });
   
-
-
-  // const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  // checkboxes.forEach((checkbox) => {
-  //   checkbox.addEventListener("change", function () {
-  //     const section = this.closest("section"); // Find the section for this checkbox
-  //     const content = section.querySelector(".content"); // Find the associated content div
-
-  //     // Extract the section ID from the checkbox ID
-  //     const sectionId = this.id.split("-")[1]; // 'intro' for #true-intro or 'overview' for #true-overview
-
-  //     // Find both checkboxes (true and false) within the section
-  //     const trueCheckbox = section.querySelector(`#true-${sectionId}`);
-  //     const falseCheckbox = section.querySelector(`#false-${sectionId}`);
-
-  //     // Select the extra text element for the 'false' checkbox
-  //     const falseTextElement = section.querySelector(".false-text-element");
-
-  //     // If one checkbox is checked, uncheck the other
-  //     if (this === trueCheckbox && trueCheckbox.checked) {
-  //       falseCheckbox.checked = false; // Uncheck the false checkbox if true is selected
-  //     }
-  //     if (this === falseCheckbox && falseCheckbox.checked) {
-  //       trueCheckbox.checked = false; // Uncheck the true checkbox if false is selected
-  //     }
-
-  //     // Toggle content visibility based on checkbox
-  //     if (trueCheckbox.checked) {
-  //       content.style.display = "grid"; // Show content when true is selected
-  //       falseTextElement.style.display = "none"; // Hide the extra text when true is selected
-  //     } else if (falseCheckbox.checked) {
-  //       content.style.display = "none"; // Hide content when false is selected
-  //       falseTextElement.style.display = "block"; // Show the extra text when false is selected
-  //     } else {
-  //       content.style.display = "none"; // Hide content if neither checkbox is checked
-  //       falseTextElement.style.display = "none"; // Ensure the extra text is hidden
-  //     }
-  //   });
-  // });
-
 
 
 
