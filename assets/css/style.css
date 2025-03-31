@@ -1000,11 +1000,10 @@ display: inline;
 
 .page-container {
   display: grid;
-  grid-template-columns: 100% ;
+  grid-template-columns: 100%;
   margin:0;
   padding: 0;
   box-sizing: border-box;
-    
  }
 
 button.circle {
@@ -1128,10 +1127,10 @@ button.circle {
   header {
   grid-column-start: 1;
   grid-column-end: span 1; 
-  height: 100vh;
+  grid-row-start: 1;
+  grid-row-end: span 1;
   place-items: center;
   place-content: center;
- 
   }
 
 
@@ -1144,9 +1143,7 @@ button.circle {
   grid-template-columns: 100%;
   background-color: rgb(238, 238, 238);
   min-height: 100%;
- 
   }
-
 
 
 
