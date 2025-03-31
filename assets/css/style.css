@@ -1055,13 +1055,9 @@ button.circle {
  
   }
 
-  /* h1 {
-   
-    padding-top: 20vh; 
-      
-    
-    
-  } */
+  h1 {
+  place-self: center;
+  } 
 
   fieldset{
     grid-column-start: 1;
@@ -1131,6 +1127,7 @@ button.circle {
   grid-column-start: 1;
   grid-column-end: span 1;
   place-items: center;
+  place-content: center;
   height: 100vh;
   }
 
